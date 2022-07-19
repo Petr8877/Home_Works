@@ -3,8 +3,14 @@ package home_work_2.loops;
 import java.util.Scanner;
 
 public class Task4_3_4 {
+
+    /**
+     * Метод main содержит бесконечный цикл для достижения переполнения
+     * Данный метод корректно работает при любых цельночисловых значениях введенного Пользователем числа
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        System.out.println("Введите число");
         long a = 1;
         long result = a;
         int number = scan.nextInt();

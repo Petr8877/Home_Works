@@ -25,6 +25,10 @@ public class ArraysIteration {
         reversArrayForEach();
     }
 
+    /**
+     * Метод allElementFor выводит все элементы массива в консоль
+     * используется цикл for
+     */
     public static void allElementFor() {
         System.out.println("Используем цикл for");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -38,6 +42,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод allElementDoWhile выводит все элементы массива в консоль
+     * используется цикл do-while
+     */
     public static void allElementDoWhile() {
         System.out.println("Используем цикл do while");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -53,6 +61,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод allElementWhile выводит все элементы массива в консоль
+     * используется цикл while
+     */
     public static void allElementWhile() {
         System.out.println("Используем цикл while");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -68,6 +80,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод allElementForEach выводит все элементы массива в консоль
+     * используется цикл for each
+     */
     public static void allElementForEach() {
         System.out.println("Используем цикл foreach");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -76,6 +92,10 @@ public class ArraysIteration {
         }
     }
 
+    /**
+     * Метод secondElementFor выводит каждый второй элемент массива в консоль
+     * используется цикл for
+     */
     public static void secondElementFor() {
         System.out.println("Используем цикл for");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -90,6 +110,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод secondElementForEach выводит каждый второй элемент массива в консоль
+     * используется цикл for each
+     */
     public static void secondElementForEach() {
         System.out.println("Используем цикл foreach");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -103,6 +127,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод secondElementDoWhile выводит каждый второй элемент массива в консоль
+     * используется цикл do-while
+     */
     public static void secondElementDoWhile() {
         System.out.println("Используем цикл do while");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -116,6 +144,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод secondElementWhile выводит каждый второй элемент массива в консоль
+     * используется цикл while
+     */
     public static void secondElementWhile() {
         System.out.println("Используем цикл while");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -129,6 +161,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод reversArrayFor выводит все элементы массива в консоль в обратном порядке
+     * используется цикл for
+     */
     public static void reversArrayFor() {
         System.out.println("Используем цикл for");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -142,6 +178,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод reversArrayForEach выводит все элементы массива в консоль в обратном порядке
+     * используется цикл for each
+     */
     public static void reversArrayForEach() {
         System.out.println("Используем цикл foreach");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -157,6 +197,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод reversArrayDoWhile выводит все элементы массива в консоль в обратном порядке
+     * используется цикл do-while
+     */
     public static void reversArrayDoWhile() {
         System.out.println("Используем цикл do while");
         int[] array = ArraysUtils.arrayFromConsole();
@@ -168,6 +212,10 @@ public class ArraysIteration {
         System.out.println();
     }
 
+    /**
+     * Метод reversArrayWhile выводит все элементы массива в консоль в обратном порядке
+     * используется цикл while
+     */
     public static void reversArrayWhile() {
         System.out.println("Используем цикл while");
         int[] array = ArraysUtils.arrayFromConsole();
