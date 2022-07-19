@@ -1,4 +1,4 @@
-package HomeWork.home_work_2.loops;
+package home_work_2.loops;
 
 public class Task6 {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Task6 {
             for (int i = 1; i < 5; i++) {
                 multy = x[i] * x[j];
                 if (x[i] != 5) {
-                    System.out.print(x[i] + " * " + x[j] + " = " + multy + "     ");
+                    System.out.print(x[i] + " * " + x[j] + " = " + multy + "\t");
                 } else {
                     System.out.println(x[i] + " * " + x[j] + " = " + multy);
                 }
@@ -19,7 +19,7 @@ public class Task6 {
             for (int i = 5; i < 10; i++) {
                 multy = x[i] * x[j];
                 if (x[i] != 10) {
-                    System.out.print(x[i] + " * " + x[j] + " = " + multy + "     ");
+                    System.out.print(x[i] + " * " + x[j] + " = " + multy + "\t");
                 } else {
                     System.out.println(x[i] + " * " + x[j] + " = " + multy);
                 }

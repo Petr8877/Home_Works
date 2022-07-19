@@ -1,4 +1,4 @@
-package HomeWork.home_work_2.loops;
+package home_work_2.loops;
 
 import java.util.Scanner;
 
@@ -20,10 +20,10 @@ public class Task3 {
         }
     }
 
-    public static double degree(double number, int degree){
+    public static double degree(double number, int degree) {
         int i = 1;
         double result = number;
-        while (i < degree){
+        while (i < degree) {
             result = result * number;
             i++;
         }
