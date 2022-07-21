@@ -1,5 +1,7 @@
 package home_work_2.arrays;
 
+import home_work_2.utils.ArraysUtils;
+
 public class ForEachOperation implements IArraysOperation {
 
     /**
@@ -10,8 +12,8 @@ public class ForEachOperation implements IArraysOperation {
      */
     public static void main(String[] args) {
         ForEachOperation foreach = new ForEachOperation();
-        foreach.secondElementForEach();
-        foreach.reversArrayForEach();
-        foreach.allElementForEach();
+        System.out.println(foreach.secondElementForEach(ArraysUtils.arrayFromConsole()));
+        System.out.println(foreach.reversArrayForEach(ArraysUtils.arrayFromConsole()));
+        System.out.println(foreach.allElementForEach(ArraysUtils.arrayFromConsole()));
     }
 }

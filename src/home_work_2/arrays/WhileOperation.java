@@ -1,5 +1,7 @@
 package home_work_2.arrays;
 
+import home_work_2.utils.ArraysUtils;
+
 public class WhileOperation implements IArraysOperation {
 
     /**
@@ -10,8 +12,8 @@ public class WhileOperation implements IArraysOperation {
      */
     public static void main(String[] args) {
         WhileOperation wer = new WhileOperation();
-        wer.reversArrayWhile();
-        wer.secondElementWhile();
-        wer.allElementWhile();
+        System.out.println(wer.reversArrayWhile(ArraysUtils.arrayFromConsole()));
+        System.out.println(wer.secondElementWhile(ArraysUtils.arrayFromConsole()));
+        System.out.println(wer.allElementWhile(ArraysUtils.arrayFromConsole()));
     }
 }

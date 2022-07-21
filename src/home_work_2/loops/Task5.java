@@ -74,7 +74,7 @@ public class Task5 {
      * @return возвращает количество нечетных цифр
      * выводит в консоль сообщение с количеством четных цифр
      */
-    public static int task5_3() {
+    public static StringBuilder task5_3() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите число");
         String num = scan.nextLine();
@@ -90,8 +90,9 @@ public class Task5 {
                 counter1 += 1;
             }
         }
-        System.out.println("Количество четных цифр " + counter1);
-        return counter;
+        StringBuilder str = new StringBuilder();
+        str.append("Колличество нечетных цифр " + counter + "Колличество четных чисел " + counter1);
+        return str;
     }
 
     /**

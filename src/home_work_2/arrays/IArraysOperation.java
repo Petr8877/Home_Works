@@ -11,181 +11,181 @@ import home_work_2.utils.ArraysUtils;
 public interface IArraysOperation {
 
     /**
-     * Метод allElementDoWhile выводит все элементы массива в консоль
+     * Метод allElementFor возврощает все элементы массива типом StringBuilder
+     * используется цикл for
+     */
+    default StringBuilder allElementFor(int[] array) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            str.append(array[i] + " ");
+        }
+        str.setLength(str.length() - 1);
+        return str;
+    }
+
+    /**
+     * Метод allElementDoWhile возврощает все элементы массива типом StringBuilder
      * используется цикл do-while
      */
-    default void allElementDoWhile() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder allElementDoWhile(int[] array) {
+        StringBuilder str = new StringBuilder();
         int i = 0;
         do {
-            if (i == 0) {
-                System.out.print(array[i]);
-            } else {
-                System.out.print(" " + array[i]);
-            }
+            str.append(array[i] + " ");
             i++;
         } while (i < array.length);
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод allElementFor выводит все элементы массива в консоль
-     * используется цикл for
-     */
-    default void allElementFor() {
-        int[] array = ArraysUtils.arrayFromConsole();
-        for (int i = 0; i < array.length; i++) {
-            if (i == 0) {
-                System.out.print(array[i]);
-            } else {
-                System.out.print(" " + array[i]);
-            }
-        }
-    }
-
-    /**
-     * Метод allElementWhile выводит все элементы массива в консоль
+     * Метод allElementWhile возврощает все элементы массива типом StringBuilder
      * используется цикл while
      */
-    default void allElementWhile() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder allElementWhile(int[] array) {
+        StringBuilder str = new StringBuilder();
         int i = 0;
         while (i < array.length) {
-            if (i == 0) {
-                System.out.print(array[i]);
-            } else {
-                System.out.print(" " + array[i]);
-            }
+            str.append(array[i] + " ");
             i++;
         }
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод allElementForEach выводит все элементы массива в консоль
+     * Метод allElementForEach возврощает все элементы массива типом StringBuilder
      * используется цикл for each
      */
-    default void allElementForEach() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder allElementForEach(int[] array) {
+        StringBuilder str = new StringBuilder();
         for (int i : array) {
-            System.out.print(i + " ");
+            str.append(i + " ");
         }
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод secondElementFor выводит каждый второй элемент массива в консоль
+     * Метод secondElementFor возвращает каждый второй элемент массива типом StringBuilder
      * используется цикл for
      */
-    default void secondElementFor() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder secondElementFor(int[] array) {
+        StringBuilder str = new StringBuilder();
         for (int i = 1; i < array.length; ) {
-            if (i == 1) {
-                System.out.print(array[i]);
-            } else {
-                System.out.print(" " + array[i]);
-            }
+            str.append(array[i] + " ");
             i += 2;
         }
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод secondElementForEach выводит каждый второй элемент массива в консоль
+     * Метод secondElementForEach возвращает каждый второй элемент массива типом StringBuilder
      * используется цикл for each
      */
-    default void secondElementForEach() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder secondElementForEach(int[] array) {
+        StringBuilder str = new StringBuilder();
         int count = 1;
         for (int i : array) {
             if (count % 2 == 0) {
-                System.out.print(i + " ");
+                str.append(i + " ");
             }
             count++;
         }
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод secondElementDoWhile выводит каждый второй элемент массива в консоль
+     * Метод secondElementDoWhile возвращает каждый второй элемент массива типом StringBuilder
      * используется цикл do-while
      */
-    default void secondElementDoWhile() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder secondElementDoWhile(int[] array) {
+        StringBuilder str = new StringBuilder();
         int i = 0;
         do {
             if (i % 2 != 0 && i != 0) {
-                System.out.print(array[i] + " ");
+                str.append(array[i] + " ");
             }
             i++;
         } while (i < array.length);
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод secondElementWhile выводит каждый второй элемент массива в консоль
+     * Метод secondElementWhile возвращает каждый второй элемент массива типом StringBuilder
      * используется цикл while
      */
-    default void secondElementWhile() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder secondElementWhile(int[] array) {
+        StringBuilder str = new StringBuilder();
         int i = 0;
         while (i < array.length) {
             if (i % 2 != 0 && i != 0) {
-                System.out.print(array[i] + " ");
+                str.append(array[i] + " ");
             }
             i++;
         }
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод reversArrayFor выводит все элементы массива в консоль в обратном порядке
+     * Метод reversArrayFor возвращает все элементы массива в обратном порядке типом StringBuilder
      * используется цикл for
      */
-    default void reversArrayFor() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder reversArrayFor(int[] array) {
+        StringBuilder str = new StringBuilder();
         for (int i = array.length - 1; i >= 0; i--) {
-            if (i == array.length - 1) {
-                System.out.print(array[i]);
-            } else {
-                System.out.print(" " + array[i]);
-            }
+            str.append(array[i] + " ");
         }
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод reversArrayForEach выводит все элементы массива в консоль в обратном порядке
+     * Метод reversArrayForEach возвращает все элементы массива в обратном порядке типом StringBuilder
      * используется цикл for each
      */
-    default void reversArrayForEach() {
-        int[] array = ArraysUtils.arrayFromConsole();
-        int[] array1 = new int[array.length];
+    default StringBuilder reversArrayForEach(int[] array) {
+        StringBuilder str = new StringBuilder();
         int x = array.length - 1;
         for (int i : array) {
-            array1[x] = i;
+            str.append(array[x] + " ");
             x--;
         }
-        for (int i : array1) {
-            System.out.print(i + " ");
-        }
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод reversArrayDoWhile выводит все элементы массива в консоль в обратном порядке
+     * Метод reversArrayDoWhile возвращает все элементы массива в обратном порядке типом StringBuilder
      * используется цикл do-while
      */
-    default void reversArrayDoWhile() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder reversArrayDoWhile(int[] array) {
+        StringBuilder str = new StringBuilder();
         int i = array.length - 1;
         do {
-            System.out.print(array[i] + " ");
+            str.append(array[i] + " ");
             i--;
         } while (i >= 0);
+        str.setLength(str.length() - 1);
+        return str;
     }
 
     /**
-     * Метод reversArrayWhile выводит все элементы массива в консоль в обратном порядке
+     * Метод reversArrayWhile возвращает все элементы массива в обратном порядке типом StringBuilder
      * используется цикл while
      */
-    default void reversArrayWhile() {
-        int[] array = ArraysUtils.arrayFromConsole();
+    default StringBuilder reversArrayWhile(int[] array) {
+        StringBuilder str = new StringBuilder();
         int i = array.length - 1;
         while (i >= 0) {
-            System.out.print(array[i] + " ");
+            str.append(array[i] + " ");
             i--;
         }
+        str.setLength(str.length() - 1);
+        return str;
     }
 }

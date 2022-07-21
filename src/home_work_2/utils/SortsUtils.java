@@ -9,14 +9,10 @@ public class SortsUtils {
      * пузырьковая сортировка
      * Метод bubble получает входящий аргумент массив для сортировки
      * попарно сравнивает все элементы до тех пор пока все элементы не займут свои места
+     *
      * @param arr отсортированный массив
      */
     public static void bubble(int[] arr) {
-        System.out.println("Массив до сортировки");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = arr.length - 1; j > i; j--) {
                 if (arr[j - 1] > arr[j]) {
@@ -26,25 +22,16 @@ public class SortsUtils {
                 }
             }
         }
-        System.out.println("Массив после сортировки");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        System.out.println();
     }
 
     /**
      * шейкерная сортировка
      * Метод shake олучает входящий аргумент массив для сортировки
      * попарно сравнивает все элементы, после прохода в одну сторону начинает попарное сравнение в обратную
+     *
      * @param arr отсортированный массив
      */
     public static void shake(int[] arr) {
-        System.out.println("Массив до сортировки");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
         int leftSide = 0;
         int rightSide = arr.length - 1;
         int count = 1;
@@ -69,12 +56,5 @@ public class SortsUtils {
             }
             leftSide++;
         }
-        System.out.println();
-        System.out.println("Массив после сортировки");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        System.out.println();
     }
 }

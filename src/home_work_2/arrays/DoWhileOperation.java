@@ -1,5 +1,7 @@
 package home_work_2.arrays;
 
+import home_work_2.utils.ArraysUtils;
+
 public class DoWhileOperation implements IArraysOperation {
 
     /**
@@ -10,8 +12,8 @@ public class DoWhileOperation implements IArraysOperation {
      */
     public static void main(String[] args) {
         DoWhileOperation doWhile = new DoWhileOperation();
-        doWhile.allElementDoWhile();
-        doWhile.reversArrayDoWhile();
-        doWhile.secondElementDoWhile();
+        System.out.println(doWhile.allElementDoWhile(ArraysUtils.arrayFromConsole()));
+        System.out.println(doWhile.reversArrayDoWhile(ArraysUtils.arrayFromConsole()));
+        System.out.println(doWhile.secondElementDoWhile(ArraysUtils.arrayFromConsole()));
     }
 }
