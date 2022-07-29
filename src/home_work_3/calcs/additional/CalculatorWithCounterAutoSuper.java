@@ -4,7 +4,7 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
 
-    long counter = 0;
+    public long counter = 0;
 
 
     /**

@@ -9,13 +9,13 @@ public class CalculatorDecoratorMain {
     public static void main(String[] args) {
         ICalculator iCalculator = new CalculatorWithCounterAutoDecorator(new CalculatorWithMemoryDecorator(new CalculatorWithMathExtends()));
 
-        CalculatorWithCounterAutoDecorator counterAutoDecorator = null;
+        CalculatorWithCounterAutoDecorator counterAutoDecorator;
         if (iCalculator instanceof CalculatorWithCounterAutoDecorator) {
             counterAutoDecorator = (CalculatorWithCounterAutoDecorator) iCalculator;
         } else {
             return;
         }
-        CalculatorWithMemoryDecorator memoryDecorator = null;
+        CalculatorWithMemoryDecorator memoryDecorator;
 
         if (counterAutoDecorator.getCalculator() instanceof CalculatorWithMemoryDecorator) {
             memoryDecorator = (CalculatorWithMemoryDecorator) counterAutoDecorator.getCalculator();

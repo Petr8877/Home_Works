@@ -4,7 +4,7 @@ import home_work_3.calcs.api.ICalculator;
 
 public class CalculatorWithMemory {
 
-    ICalculator calculator;
+    private final ICalculator calculator;
 
     public CalculatorWithMemory(ICalculator calculator) {
         this.calculator = calculator;

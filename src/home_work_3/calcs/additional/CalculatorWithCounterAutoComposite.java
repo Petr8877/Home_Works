@@ -2,7 +2,7 @@ package home_work_3.calcs.additional;
 
 public class CalculatorWithCounterAutoComposite {
 
-    CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
+    private final CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
 
     /**
      * Метод getCountOperation возвращает значение счетчика использования методов

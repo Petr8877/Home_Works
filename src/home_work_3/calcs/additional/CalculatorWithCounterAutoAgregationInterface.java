@@ -4,13 +4,13 @@ import home_work_3.calcs.api.ICalculator;
 
 public class CalculatorWithCounterAutoAgregationInterface {
 
-    ICalculator calculator;
+    private final ICalculator calculator;
 
     public CalculatorWithCounterAutoAgregationInterface(ICalculator calculator) {
         this.calculator = calculator;
     }
 
-    private long counter = 0;
+     private long counter = 0;
 
     /**
      * Метод incrementCountOperation подсчитывает использование методов класса
