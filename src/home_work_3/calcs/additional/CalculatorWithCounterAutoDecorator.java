@@ -1,15 +1,38 @@
 package home_work_3.calcs.additional;
 
-public class CalculatorWithCounterAutoComposite {
+import home_work_3.calcs.api.ICalculator;
 
-    CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
+public class CalculatorWithCounterAutoDecorator implements ICalculator {
+
+    ICalculator calculator;
+
+    private long counter;
+
+    public CalculatorWithCounterAutoDecorator(ICalculator calculator) {
+        this.calculator = calculator;
+    }
+
+    /**
+     * Метод incrementCountOperation подсчитывает использование методов класса
+     */
+    public void incrementCountOperation() {
+        counter++;
+    }
 
     /**
      * Метод getCountOperation возвращает значение счетчика использования методов
      *
      */
     public long getCountOperation() {
-        return calc.counter;
+        return counter;
+    }
+
+    /**
+     * Метод getCalculator возвращает экземпляр класса (тип ICalculator)
+     *
+     */
+    public ICalculator getCalculator() {
+        return calculator;
     }
 
     /**
@@ -19,8 +42,10 @@ public class CalculatorWithCounterAutoComposite {
      * @param y второе число (тип double)
      * @return возвращаем сумму переданых аргументов (тип double)
      */
+    @Override
     public double adding(double x, double y) {
-        return calc.adding(x, y);
+        incrementCountOperation();
+        return calculator.adding(x, y);
     }
 
     /**
@@ -30,8 +55,10 @@ public class CalculatorWithCounterAutoComposite {
      * @param y второе число (вычитаемое) (тип double)
      * @return возвращает разность чисел (тип double)
      */
+    @Override
     public double subtraction(double x, double y) {
-        return calc.subtraction(x, y);
+        incrementCountOperation();
+        return calculator.subtraction(x, y);
     }
 
     /**
@@ -41,8 +68,10 @@ public class CalculatorWithCounterAutoComposite {
      * @param y второе число (тип double)
      * @return возвращает произведение чисел (тип double)
      */
+    @Override
     public double multiplication(double x, double y) {
-        return calc.multiplication(x, y);
+        incrementCountOperation();
+        return calculator.multiplication(x, y);
     }
 
     /**
@@ -52,8 +81,10 @@ public class CalculatorWithCounterAutoComposite {
      * @param y второе число (тип double)
      * @return возвращает частное (тип double)
      */
+    @Override
     public double division(double x, double y) {
-        return calc.division(x, y);
+        incrementCountOperation();
+        return calculator.division(x, y);
     }
 
     /**
@@ -63,8 +94,10 @@ public class CalculatorWithCounterAutoComposite {
      * @param y степень для возведения (тип int)
      * @return возвращает возведенное число (тип double)
      */
+    @Override
     public double exponentiation(double x, int y) {
-        return calc.exponentiation(x, y);
+        incrementCountOperation();
+        return calculator.exponentiation(x, y);
     }
 
     /**
@@ -73,8 +106,10 @@ public class CalculatorWithCounterAutoComposite {
      * @param x число (тип double)
      * @return возвращает модуль числа (тип double)
      */
+    @Override
     public double numberModulus(double x) {
-        return calc.numberModulus(x);
+        incrementCountOperation();
+        return calculator.numberModulus(x);
     }
 
     /**
@@ -83,8 +118,9 @@ public class CalculatorWithCounterAutoComposite {
      * @param x число (тип double)
      * @return возвращает извлеченный корень из числа (тип double)
      */
+    @Override
     public double squareRoot(double x) {
-        return calc.squareRoot(x);
+        incrementCountOperation();
+        return calculator.squareRoot(x);
     }
-
 }

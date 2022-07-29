@@ -8,15 +8,15 @@ public class CalculatorWithCounterClassicMain {
         CalculatorWithCounterClassic calc = new CalculatorWithCounterClassic();
 
         double result;
-        double value1 = calc.division(28.0, 5);
+        double division = calc.division(28.0, 5);
         calc.incrementCountOperation();
-        double value2 = calc.exponentiation(value1, 2);
+        double ex = calc.exponentiation(division, 2);
         calc.incrementCountOperation();
-        double value3 = calc.multiplication(15, 7);
+        double mult = calc.multiplication(15, 7);
         calc.incrementCountOperation();
-        double value4 = calc.adding(4.1, value3);
+        double adding = calc.adding(4.1, mult);
         calc.incrementCountOperation();
-        result = calc.adding(value2, value4);
+        result = calc.adding(ex, adding);
         calc.incrementCountOperation();
         System.out.println(result);
         System.out.println(calc.getCountOperation());

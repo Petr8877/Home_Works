@@ -1,15 +1,64 @@
 package home_work_3.calcs.additional;
 
-public class CalculatorWithCounterAutoComposite {
+import home_work_3.calcs.api.ICalculator;
 
-    CalculatorWithCounterAutoSuper calc = new CalculatorWithCounterAutoSuper();
+public class CalculatorWithMemoryDecorator implements ICalculator {
+
+    ICalculator calculator;
+
+    public CalculatorWithMemoryDecorator(ICalculator calculator) {
+        this.calculator = calculator;
+    }
+
+    private double lastOperationResult;
+
+    private double memory;
+
+    private long counter = 0;
+
+    /**
+     * Метод incrementCountOperation подсчитывает использование методов класса
+     */
+    private void incrementCountOperation() {
+        counter++;
+    }
+
+    /**
+     * Метод addLastOperationResult сохраняет результат последнего выполненного метода
+     *
+     * @param result возвращает результат последнего вычисления
+     */
+    private void addLastOperationResult(double result) {
+        lastOperationResult = result;
+    }
+
+    /**
+     * Метод addMemory при вызове записывает результат последней операции в поле memory
+     */
+    public void addMemory() {
+        memory = lastOperationResult;
+    }
+
+    /**
+     * Метод getMemory возвращает поле результат последней операции и очищает поле memory
+     *
+     */
+    public double getMemory() {
+        double tmp = memory;
+        memory = 0;
+        return tmp;
+    }
 
     /**
      * Метод getCountOperation возвращает значение счетчика использования методов
      *
      */
     public long getCountOperation() {
-        return calc.counter;
+        return counter;
+    }
+
+    public ICalculator getCalculator() {
+        return calculator;
     }
 
     /**
@@ -20,7 +69,9 @@ public class CalculatorWithCounterAutoComposite {
      * @return возвращаем сумму переданых аргументов (тип double)
      */
     public double adding(double x, double y) {
-        return calc.adding(x, y);
+        incrementCountOperation();
+        addLastOperationResult(calculator.adding(x, y));
+        return calculator.adding(x, y);
     }
 
     /**
@@ -31,7 +82,9 @@ public class CalculatorWithCounterAutoComposite {
      * @return возвращает разность чисел (тип double)
      */
     public double subtraction(double x, double y) {
-        return calc.subtraction(x, y);
+        incrementCountOperation();
+        addLastOperationResult(calculator.subtraction(x, y));
+        return calculator.subtraction(x, y);
     }
 
     /**
@@ -42,7 +95,9 @@ public class CalculatorWithCounterAutoComposite {
      * @return возвращает произведение чисел (тип double)
      */
     public double multiplication(double x, double y) {
-        return calc.multiplication(x, y);
+        incrementCountOperation();
+        addLastOperationResult(calculator.multiplication(x, y));
+        return calculator.multiplication(x, y);
     }
 
     /**
@@ -53,7 +108,9 @@ public class CalculatorWithCounterAutoComposite {
      * @return возвращает частное (тип double)
      */
     public double division(double x, double y) {
-        return calc.division(x, y);
+        incrementCountOperation();
+        addLastOperationResult(calculator.division(x, y));
+        return calculator.division(x, y);
     }
 
     /**
@@ -64,7 +121,9 @@ public class CalculatorWithCounterAutoComposite {
      * @return возвращает возведенное число (тип double)
      */
     public double exponentiation(double x, int y) {
-        return calc.exponentiation(x, y);
+        incrementCountOperation();
+        addLastOperationResult(calculator.exponentiation(x, y));
+        return calculator.exponentiation(x, y);
     }
 
     /**
@@ -74,7 +133,9 @@ public class CalculatorWithCounterAutoComposite {
      * @return возвращает модуль числа (тип double)
      */
     public double numberModulus(double x) {
-        return calc.numberModulus(x);
+        incrementCountOperation();
+        addLastOperationResult(calculator.numberModulus(x));
+        return calculator.numberModulus(x);
     }
 
     /**
@@ -84,7 +145,9 @@ public class CalculatorWithCounterAutoComposite {
      * @return возвращает извлеченный корень из числа (тип double)
      */
     public double squareRoot(double x) {
-        return calc.squareRoot(x);
+        incrementCountOperation();
+        addLastOperationResult(calculator.squareRoot(x));
+        return calculator.squareRoot(x);
     }
 
 }

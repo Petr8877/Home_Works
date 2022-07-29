@@ -6,10 +6,17 @@ public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
 
     private long couner = 0;
 
+    /**
+     * Метод incrementCountOperation подсчитывает использование методов класса
+     */
     public void incrementCountOperation() {
         couner++;
     }
 
+    /**
+     * Метод getCountOperation возвращает значение счетчика использования методов
+     *
+     */
     public long getCountOperation() {
         return couner;
     }

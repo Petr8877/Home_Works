@@ -10,11 +10,11 @@ public class CalculatorWithCounterDelegateAgregationMain {
         CalculatorWithMathCopy calc = new CalculatorWithMathCopy();
         CalculatorWithCounterAutoAgregation calculator = new CalculatorWithCounterAutoAgregation(calc);
 
-        double val1 = calculator.division(28, 5);
-        double val2 = calculator.exponentiation(val1, 2);
-        double val3 = calculator.multiplication(15, 7);
-        double val4 = calculator.adding(4.1, val2);
-        double result = calculator.adding(val3, val4);
+        double division = calculator.division(28, 5);
+        double ex = calculator.exponentiation(division, 2);
+        double mult = calculator.multiplication(15, 7);
+        double adding = calculator.adding(4.1, ex);
+        double result = calculator.adding(mult, adding);
         System.out.println(result);
         System.out.println(calculator.getCountOperation());
     }
