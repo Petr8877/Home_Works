@@ -48,6 +48,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Возвращает содержимое ячейки по индексу
+     *
      * @param index переданный аргумент (индекс ячейки)
      * @return возвращает содержимое ячейки по индексу, если индекс меньше нуля, больше длинны масива или равен
      * длинне массива возвращает null
@@ -63,6 +64,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Возвращает поле data
+     *
      * @return возвращает поле data
      */
     public T[] getItems() {
@@ -71,6 +73,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Удаляет элемент из поля data по индексу
+     *
      * @param index переданный аргумент (индекс ячейки)
      * @return если елемент удален возвращает true, если не удален false
      */
@@ -88,6 +91,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Удаляет элемент из поля data
+     *
      * @param item переданный аргумент (объект для удаления)
      * @return если елемент удален возвращает true, если не удален false
      */
@@ -104,6 +108,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Сортирует данные записанных в поле data
+     *
      * @param comparator преданный аргумент (Comparator)
      */
     public void sort(Comparator<T> comparator) {
@@ -120,6 +125,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Переопределение метода toString
+     *
      * @return выводить содержимое data без ячеек в которых хранится null
      */
     public String toString(Integer[] data) {
@@ -135,6 +141,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Сортирует данные записанных в поле data
+     *
      * @param dataContainer переданный аргумент (объект с дженериком extends Comparable)
      */
     public static <T extends Comparable<T>> void sort(DataContainer<T> dataContainer) {
@@ -155,7 +162,8 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Сортирует данные записанных в поле data
-     * @param container переданный аргумет для сортировки
+     *
+     * @param container  переданный аргумет для сортировки
      * @param comparator реализация интерфейса Comparator
      */
     public static <T> void sort(DataContainer<T> container, Comparator<T> comparator) {
@@ -175,6 +183,7 @@ public class DataContainer<T> implements Iterable<T> {
 
     /**
      * Переопределение метода Iterator
+     *
      * @return возвращает новый итератор
      */
     @Override
@@ -191,6 +200,7 @@ public class DataContainer<T> implements Iterable<T> {
 
         /**
          * Проверяет наличие следующего элемента
+         *
          * @return если елемент есть возвращает true, если елемента нет false
          */
         @Override
@@ -200,15 +210,17 @@ public class DataContainer<T> implements Iterable<T> {
 
         /**
          * Переходит на следующий элемент
+         *
          * @return возвращает следующий элемент
          */
         @Override
         public T next() {
             int tmp = counter++;
-            if (tmp >= data.length){
+            if (tmp >= data.length) {
                 return null;
             } else {
-            return data[tmp];}
+                return data[tmp];
+            }
         }
     }
 }
