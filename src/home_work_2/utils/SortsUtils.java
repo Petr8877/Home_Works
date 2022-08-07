@@ -1,9 +1,7 @@
 package home_work_2.utils;
 
 public class SortsUtils {
-    public static void main(String[] args) {
 
-    }
 
     /**
      * пузырьковая сортировка

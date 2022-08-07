@@ -1,9 +1,6 @@
 package home_work_2.utils;
 
 public class PrintUtils {
-    public static void main(String[] args) {
-
-    }
 
     /**
      * Метод print перебирает массив поэлементно и выводит каждый элемент в консоль
