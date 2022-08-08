@@ -10,6 +10,8 @@ public class DataMain {
         Integer[] data = new Integer[15];
         DataContainer<Integer> container = new DataContainer<>(data);
         IntegerComparator comparator = new IntegerComparator();
+        Iterator<Integer> iterator = container.iterator();
+        int i = 0;
 
         System.out.println(container.add(13));
         container.add(9);
@@ -31,6 +33,8 @@ public class DataMain {
         System.out.println(container.delete(container.get(3)));
         System.out.println(container.get(3));
 
+        System.out.println(Arrays.toString(container.getItems()));
+
         container.sort(comparator);
         System.out.println(Arrays.toString((container.getItems())));
 
@@ -40,8 +44,6 @@ public class DataMain {
         DataContainer.sort(container, comparator);
         System.out.println(Arrays.toString((container.getItems())));
 
-        Iterator<Integer> iterator = container.iterator();
-        int i = 0;
         while (iterator.hasNext()) {
             System.out.println(data[i]);
             i++;

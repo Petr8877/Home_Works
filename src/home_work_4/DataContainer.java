@@ -96,14 +96,13 @@ public class DataContainer<T> implements Iterable<T> {
      * @return если елемент удален возвращает true, если не удален false
      */
     public boolean delete(T item) {
-        boolean result = false;
         for (int i = 0; i < data.length; i++) {
             if (data[i] != null && data[i].equals(item)) {
                 delete(i);
-                result = true;
+                return true;
             }
         }
-        return result;
+        return false;
     }
 
     /**
@@ -147,13 +146,18 @@ public class DataContainer<T> implements Iterable<T> {
     public static <T extends Comparable<T>> void sort(DataContainer<T> dataContainer) {
         T[] data = dataContainer.getItems();
         for (int i = 0; i < data.length - 1; i++) {
-            T outerCycleElement = data[i];
-            if (outerCycleElement != null) {
+            if (data[i] == null) {
+                T tmp = data[i];
+                data[i] = data[i + 1];
+                data[i + 1] = tmp;
+            } else {
                 for (int j = i + 1; j < data.length; j++) {
-                    T innerCycleElement = data[j];
-                    if (innerCycleElement == null || outerCycleElement.compareTo(innerCycleElement) > 0) {
-                        data[j] = outerCycleElement;
-                        data[i] = innerCycleElement;
+                    if (data[j] != null) {
+                        if (data[i].compareTo(data[j]) > 0) {
+                            T tmp = data[j];
+                            data[j] = data[i];
+                            data[i] = tmp;
+                        }
                     }
                 }
             }
@@ -169,12 +173,18 @@ public class DataContainer<T> implements Iterable<T> {
     public static <T> void sort(DataContainer<T> container, Comparator<T> comparator) {
         T[] data = container.getItems();
         for (int i = 0; i < data.length - 1; i++) {
-            if (data[i] != null) {
+            if (data[i] == null) {
+                T tmp = data[i];
+                data[i] = data[i + 1];
+                data[i + 1] = tmp;
+            } else {
                 for (int j = i + 1; j < data.length; j++) {
-                    if (data[j] == null || comparator.compare(data[i], data[j]) > 0) {
-                        T tmp = data[j];
-                        data[j] = data[i];
-                        data[i] = tmp;
+                    if (data[j] != null) {
+                        if (comparator.compare(data[i], data[j]) > 0) {
+                            T tmp = data[j];
+                            data[j] = data[i];
+                            data[i] = tmp;
+                        }
                     }
                 }
             }
