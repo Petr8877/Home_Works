@@ -1,19 +1,42 @@
 package home_work_2.arrays;
 
-import home_work_2.utils.ArraysUtils;
 
 public class DoWhileOperation implements IArraysOperation {
+    @Override
+    public String allElement(int[] array) {
+        StringBuilder str = new StringBuilder();
+        int i = 0;
+        do {
+            str.append(array[i]).append(" ");
+            i++;
+        } while (i < array.length);
+        str.setLength(str.length() - 1);
+        return str.toString();
+    }
 
-    /**
-     * Класс DoWhileOperation используя интерфейс IArraysOperation выполняет следующие задачи:
-     * doWhile.allElementDoWhile() - выводит все элементы массива в консоль (используется цикл do-while)
-     * doWhile.reversArrayDoWhile() - выводит все элементы массива в консоль в обратном порядке (используется цикл do-while)
-     * doWhile.secondElementDoWhile() - выводит каждый второй элемент массива в консоль (используется цикл do-while)
-     */
-    public static void main(String[] args) {
-        DoWhileOperation doWhile = new DoWhileOperation();
-        System.out.println(doWhile.allElementDoWhile(ArraysUtils.arrayFromConsole()));
-        System.out.println(doWhile.reversArrayDoWhile(ArraysUtils.arrayFromConsole()));
-        System.out.println(doWhile.secondElementDoWhile(ArraysUtils.arrayFromConsole()));
+    @Override
+    public String secondElement(int[] array) {
+        StringBuilder str = new StringBuilder();
+        int i = 0;
+        do {
+            if (i % 2 != 0 && i != 0) {
+                str.append(array[i]).append(" ");
+            }
+            i++;
+        } while (i < array.length);
+        str.setLength(str.length() - 1);
+        return str.toString();
+    }
+
+    @Override
+    public String reversArray(int[] array) {
+        StringBuilder str = new StringBuilder();
+        int i = array.length - 1;
+        do {
+            str.append(array[i]).append(" ");
+            i--;
+        } while (i >= 0);
+        str.setLength(str.length() - 1);
+        return str.toString();
     }
 }

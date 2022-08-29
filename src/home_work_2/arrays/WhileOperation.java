@@ -1,19 +1,41 @@
 package home_work_2.arrays;
 
-import home_work_2.utils.ArraysUtils;
-
 public class WhileOperation implements IArraysOperation {
+    @Override
+    public String allElement(int[] array) {
+        StringBuilder str = new StringBuilder();
+        int i = 0;
+        while (i < array.length) {
+            str.append(array[i]).append(" ");
+            i++;
+        }
+        str.setLength(str.length() - 1);
+        return str.toString();
+    }
 
-    /**
-     * Класс WhileOperation используя интерфейс IArraysOperation выполняет следующие задачи:
-     * wer.allElementWhile() - выводит все элементы массива в консоль (используется цикл while)
-     * wer.reversArrayWhile() - выводит все элементы массива в консоль в обратном порядке (используется цикл while)
-     * wer.secondElementWhile() - выводит каждый второй элемент массива в консоль (используется цикл while)
-     */
-    public static void main(String[] args) {
-        WhileOperation wer = new WhileOperation();
-        System.out.println(wer.reversArrayWhile(ArraysUtils.arrayFromConsole()));
-        System.out.println(wer.secondElementWhile(ArraysUtils.arrayFromConsole()));
-        System.out.println(wer.allElementWhile(ArraysUtils.arrayFromConsole()));
+    @Override
+    public String secondElement(int[] array) {
+        StringBuilder str = new StringBuilder();
+        int i = 0;
+        while (i < array.length) {
+            if (i % 2 != 0 && i != 0) {
+                str.append(array[i]).append(" ");
+            }
+            i++;
+        }
+        str.setLength(str.length() - 1);
+        return str.toString();
+    }
+
+    @Override
+    public String reversArray(int[] array) {
+        StringBuilder str = new StringBuilder();
+        int i = array.length - 1;
+        while (i >= 0) {
+            str.append(array[i]).append(" ");
+            i--;
+        }
+        str.setLength(str.length() - 1);
+        return str.toString();
     }
 }

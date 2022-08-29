@@ -1,19 +1,34 @@
 package home_work_2.arrays;
 
-import home_work_2.utils.ArraysUtils;
-
 public class ForOperation implements IArraysOperation {
+    @Override
+    public String allElement(int[] array) {
+        StringBuilder str = new StringBuilder();
+        for (int j : array) {
+            str.append(j).append(" ");
+        }
+        str.setLength(str.length() - 1);
+        return str.toString();
+    }
 
-    /**
-     * Класс ForOperation используя интерфейс IArraysOperation выполняет следующие задачи:
-     * forop.allElementFor() - выводит все элементы массива в консоль (используется цикл for)
-     * forop.reversArrayFor() - выводит все элементы массива в консоль в обратном порядке (используется цикл for)
-     * forop.secondElementFor() - выводит каждый второй элемент массива в консоль (используется цикл for)
-     */
-    public static void main(String[] args) {
-        ForOperation forop = new ForOperation();
-        System.out.println(forop.allElementFor(ArraysUtils.arrayFromConsole()));
-        System.out.println(forop.reversArrayFor(ArraysUtils.arrayFromConsole()));
-        System.out.println(forop.secondElementFor(ArraysUtils.arrayFromConsole()));
+    @Override
+    public String secondElement(int[] array) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 1; i < array.length; ) {
+            str.append(array[i]).append(" ");
+            i += 2;
+        }
+        str.setLength(str.length() - 1);
+        return str.toString();
+    }
+
+    @Override
+    public String reversArray(int[] array) {
+        StringBuilder str = new StringBuilder();
+        for (int i = array.length - 1; i >= 0; i--) {
+            str.append(array[i]).append(" ");
+        }
+        str.setLength(str.length() - 1);
+        return str.toString();
     }
 }

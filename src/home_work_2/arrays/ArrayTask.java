@@ -1,19 +1,12 @@
 package home_work_2.arrays;
 
-import home_work_2.utils.ArraysUtils;
-
-import java.util.Scanner;
-
 public class ArrayTask {
-    public static void main(String[] args) {
-
-    }
 
     /**
      * 2.4.1. Сумма четных положительных элементов массива
      * Метод task2_4_1 суммирует четные положительные элементы массива
      */
-    public static int task2_4_1(int[] array) {
+    public int task2_4_1(int[] array) {
         int result = 0;
         for (int i : array) {
             if (i % 2 == 0) {
@@ -27,7 +20,7 @@ public class ArrayTask {
      * 2.4.2. Максимальный из элементов массива с четными индексами
      * Метод task2_4_2 определяет и возвращает максимальный элемент массива с четным индексом
      */
-    public static int task2_4_2(int[] array) {
+    public int task2_4_2(int[] array) {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
             if (i % 2 == 0 && i != 0) {
@@ -43,7 +36,7 @@ public class ArrayTask {
      * 2.4.3. Элементы массива, которые меньше среднего арифметического
      * Метод task2_4_3 определяет и возвращает все элементы массива, которые меньше среднего арифметического
      */
-    public static StringBuilder task2_4_3(int[] array) {
+    public String task2_4_3(int[] array) {
         StringBuilder str = new StringBuilder();
         int sumArray = 0;
         for (int i : array) {
@@ -52,18 +45,18 @@ public class ArrayTask {
         int arithmeticMean = sumArray / array.length;
         for (int i : array) {
             if (i < arithmeticMean) {
-                str.append(i + " ");
+                str.append(i).append(" ");
             }
         }
         str.setLength(str.length() - 1);
-        return str;
+        return str.toString();
     }
 
     /**
      * 2.4.4. Найти два наименьших (минимальных) элемента массива
      * Метод task2_4_4 определяет и возвращает два минимальных элемента массива
      */
-    public static String task2_4_4(int[] array) {
+    public String task2_4_4(int[] array) {
         int min = Integer.MAX_VALUE;
         int min1 = Integer.MAX_VALUE - 1;
         for (int j : array) {
@@ -72,7 +65,8 @@ public class ArrayTask {
                 min = j;
             }
         }
-        String result = "Минимальный элемент массива равен " + min + " второй минимальный элемент равен " + min1;
+        String result;
+        result = "Минимальный элемент массива равен " + min + " второй минимальный элемент равен " + min1;
         return result;
     }
 
@@ -82,31 +76,26 @@ public class ArrayTask {
      * после смещения всего массива крайние элементы (соответствуют количеству найденых элементов принадлежащих интервалу)
      * заменяются на 0
      */
-    public static int[] task2_4_5(int[] array) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Введите нижний предел интервала (от 0 до 100)");
-        int min = scan.nextInt();
-        System.out.println("Введите верхний предел интервала (от 0 до 100)");
-        int max = scan.nextInt();
+    public int[] task2_4_5(int[] array, int min, int max) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= min && array[i] <= max) {
                 count++;
-                for (int j = i; j < array.length - 1; j++) {
-                    array[j] = array[j + 1];
-                }
+                if (array.length - 1 - i >= 0) System.arraycopy(array, i + 1, array, i, array.length - 1 - i);
                 array[array.length - count] = 0;
                 i--;
             }
         }
-        return array;
+        int[] result = new int[array.length - count];
+        System.arraycopy(array, 0, result, 0, result.length);
+        return result;
     }
 
     /**
      * 2.4.6. Сумма цифр массива
      * Метод task2_4_6 разделяет каждый элемент массива на цифры и суммирует все цифры массива
      */
-    public static int task2_4_6(int[] array) {
+    public int task2_4_6(int[] array) {
         int sumNumber = 0;
         for (int i : array) {
             if (i > 9) {
