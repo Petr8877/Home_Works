@@ -1,17 +1,16 @@
 package ClassWork.Students;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
-public class Students {
+public class Students implements Serializable {
 
-    private  String firstName;
+    private final String firstName;
 
-    private  String lastName;
+    private final String lastName;
 
-    private  String middleName;
+    private final String middleName;
 
-    private  int mark;
+    private final int mark;
 
     public Students(String firstName, String lastName, String middleName, int mark) {
         this.firstName = firstName;
@@ -24,39 +23,29 @@ public class Students {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getMiddleName() {
         return middleName;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
+    public String getFIO() {
+        return lastName + " " + firstName + " " + middleName;
     }
 
     public int getMark() {
         return mark;
     }
 
-    public void setMark(int mark) {
-        this.mark = mark;
-    }
-
-    public List<String> createFIO(){
-        List<String> fio = new ArrayList<>();
-        fio.add(this.firstName);
-        fio.add(this.lastName);
-        fio.add(middleName);
-        return fio;
+    @Override
+    public String toString() {
+        return "Students{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", mark=" + mark +
+                '}';
     }
 }
