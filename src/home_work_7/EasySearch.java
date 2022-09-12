@@ -38,7 +38,8 @@ public class EasySearch implements ISearchEngine {
             return true;
         }
         char charBeforeWord = text.charAt(indexOf - 1);
-        return !(charBeforeWord >= 1040 && charBeforeWord <= 1103) && !(charBeforeWord >= 48 && charBeforeWord <= 57) && charBeforeWord != 45;
+        char charBeforeBeforeWord = text.charAt(indexOf - 2);
+        return !(charBeforeWord >= 1040 && charBeforeWord <= 1103) && !(charBeforeWord >= 48 && charBeforeWord <= 57) && (charBeforeWord != 45 || (!(charBeforeBeforeWord >= 1040 && charBeforeBeforeWord <= 1103) && !(charBeforeBeforeWord >= 48 && charBeforeBeforeWord <= 57)));
     }
 
 

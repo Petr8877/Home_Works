@@ -15,12 +15,9 @@ public class RegExSearch implements ISearchEngine {
 
     @Override
     public long search(String text, String word) {
-        int index = text.indexOf(word);
-        if (((text.indexOf("-", index - 1) == -1) || index == 0) && (text.indexOf("-", index + word.length()) == -1) || index == text.length() - 1) {
-            Pattern pattern = Pattern.compile("\\b" + Pattern.quote(word) + "\\b");
-            Matcher matcher = pattern.matcher(text);
-            return matcher.results().count();
-        }
-        return 0;
+        String clearText = Util.onlyWords(Util.convertToString(text));
+        Pattern pattern = Pattern.compile("\\b" + Pattern.quote(word) + "\\b");
+        Matcher matcher = pattern.matcher(clearText);
+        return matcher.results().count();
     }
 }

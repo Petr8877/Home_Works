@@ -56,4 +56,9 @@ class IgnoreCaseDecoratorTest {
     public void search10() {
         Assertions.assertEquals(1, ignoreCaseDecorator.search("один,два,три", "три"));
     }
+
+    @Test
+    public void search11() {
+        Assertions.assertEquals(6, ignoreCaseDecorator.search("три, три.три .-три ТРИ!три", "три"));
+    }
 }

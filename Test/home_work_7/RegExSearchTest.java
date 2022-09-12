@@ -24,7 +24,7 @@ class RegExSearchTest {
 
     @Test
     public void search4() {
-        Assertions.assertEquals(0, regExSearch.search("Привет-привет", "привет"));
+        Assertions.assertEquals(1, regExSearch.search("Привет-привет", "привет"));
     }
 
     @Test
@@ -55,5 +55,10 @@ class RegExSearchTest {
     @Test
     public void search10() {
         Assertions.assertEquals(1, regExSearch.search("один,два,три", "три"));
+    }
+
+    @Test
+    public void search11() {
+        Assertions.assertEquals(5, regExSearch.search("три, три.три .-три ТРИ!три", "три"));
     }
 }

@@ -56,4 +56,9 @@ class EasySearchTest {
     public void search10() {
         Assertions.assertEquals(1, easySearch.search("один,два,три", "три"));
     }
+
+    @Test
+    public void search11() {
+        Assertions.assertEquals(5, easySearch.search("три, три.три .-три ТРИ!три", "три"));
+    }
 }

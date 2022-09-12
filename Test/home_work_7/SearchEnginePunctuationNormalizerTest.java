@@ -56,4 +56,9 @@ class SearchEnginePunctuationNormalizerTest {
     public void search10() {
         Assertions.assertEquals(1, search.search("один,два,три", "три"));
     }
+
+    @Test
+    public void search11() {
+        Assertions.assertEquals(5, search.search("три, три.три .-три ТРИ!три", "три"));
+    }
 }
