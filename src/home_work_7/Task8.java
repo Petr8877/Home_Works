@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 //     /Users/petr/Desktop/Books/
 
@@ -18,6 +21,7 @@ public class Task8 {
      */
     public static void main(String[] args) {
 
+        ExecutorService executors = Executors.newFixedThreadPool(100);
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите адрес директории");
         String way = scanner.nextLine();
@@ -38,11 +42,13 @@ public class Task8 {
             System.out.println("Для прекращения программы напишите \"стоп\"");
             String word = scanner.nextLine();
             if (word.equalsIgnoreCase("стоп")) {
+                executors.shutdown();
                 break;
             } else {
                 for (File file : lst) {
-                    new BooksThread(result, String.valueOf(file), word);
+                    executors.submit(new BooksThread(result, String.valueOf(file), word));
                 }
+
             }
         }
     }

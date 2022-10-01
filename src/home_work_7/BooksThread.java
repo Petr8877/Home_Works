@@ -13,7 +13,6 @@ public class BooksThread implements Runnable {
         this.result = result;
         this.nameFile = nameFile;
         this.word = word;
-        new Thread(this).start();
     }
 
     @Override
