@@ -1,7 +1,10 @@
-package home_work_7;
+package home_work_7.Util;
+
+import home_work_7.search.EasySearch;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Util {
@@ -53,52 +56,49 @@ public class Util {
                 arr[i] = cor.toString();
             }
         }
-
         for (String s : arr) {
             if (builder.length() > 0) {
-                builder.append(" ");
+                if (!(builder.toString().lastIndexOf(' ') == builder.length() - 1)) {
+                    builder.append(" ");
+                }
             }
             char[] tmp = s.toCharArray();
             for (char c : tmp) {
                 if (c == 45 || (c >= 1040 && c <= 1103) || (c >= 48 && c <= 57)) {
                     builder.append(Character.toChars(c));
-                } else {
-                    builder.append(" ");
                 }
             }
         }
         return builder.toString();
     }
 
-    public static void readFromFile(String text){
-
+    /**
+     * Создает массив файлом (тип File)
+     *
+     * @param way переданный путь в директорию (тип String)
+     * @return возвращает массив файлов (тип File[])
+     */
+    public static File[] createListNameFiles(String way) {
+        File dir = new File(way);
+        return dir.listFiles();
     }
 
-//    public static void checkSymbols(String text) {
-//        String[] arr = text.split(" ");
-//        for (int i = 0; i < arr.length; i++) {
-//            if (arr[i].contains("-")) {
-//                System.out.println("bylo" + arr[i]);
-//                char[] tmp = arr[i].toCharArray();
-//                String cor = "";
-//                for (char c : tmp) {
-//                    if (c != 45 || cor.length() != 0) {
-//                        System.out.println("1111");
-//                        cor += c;
-//                    }
-//                }
-//                System.out.println(cor);
-//                arr[i] = cor;
-//                System.out.println("stalo" + arr[i]);
-//                System.out.println(arr[i].length());
-//            }
-//
-//        }
-//        //return
-//    }
-
-//    public static void main(String[] args) {
-//        String x = onlyWords(convertToString("src/home_work_7/WarAndPeace.txt"));
-//        checkSymbols(x);
-//    }
+    /**
+     * производит поиск и записывает результат в файл
+     * @param result файл для записи результата
+     * @param file наименование файла для поиска
+     * @param word слово для поиска
+     * @param nameFile адрес файла для поиска
+     */
+    public static void searchAndWrite(File result, String file, String word, String nameFile) {
+        EasySearch easySearch = new EasySearch();
+        try {
+            try (FileWriter writer = new FileWriter(result, true)) {
+                long count = easySearch.search(Util.convertToString(nameFile), word);
+                writer.write(file + " - " + word + " - " + count + "\n");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

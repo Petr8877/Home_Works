@@ -1,5 +1,7 @@
 package home_work_7;
 
+import home_work_7.comparator.ComparatorTask2_2;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;

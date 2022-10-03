@@ -1,4 +1,4 @@
-package home_work_7;
+package home_work_7.api;
 
 public interface ISearchEngine {
 

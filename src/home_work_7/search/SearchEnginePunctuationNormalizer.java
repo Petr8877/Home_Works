@@ -1,4 +1,6 @@
-package home_work_7;
+package home_work_7.search;
+
+import home_work_7.api.ISearchEngine;
 
 import java.io.File;
 import java.io.FileReader;

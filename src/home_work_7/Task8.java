@@ -1,13 +1,10 @@
 package home_work_7;
 
+import home_work_7.Util.Util;
+
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
-import java.util.concurrent.Executor;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,21 +18,18 @@ public class Task8 {
      */
     public static void main(String[] args) {
 
-        ExecutorService executors = Executors.newFixedThreadPool(100);
+        ExecutorService executors = Executors.newFixedThreadPool(8);
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите адрес директории");
         String way = scanner.nextLine();
-        File dir = new File(way);
-        List<File> lst = new ArrayList<>();
-        for (File file : Objects.requireNonNull(dir.listFiles())) {
-            if (file.isFile())
-                lst.add(file);
-        }
+        File[] lst = Util.createListNameFiles(way);
         File result = new File("result.txt");
-        try {
-            new FileWriter(result, false).close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (result.exists()) {
+            boolean resultDelete = result.delete();
+            if (!resultDelete) {
+                System.out.println("Что-то пошло не так, файл не удален!");
+                return;
+            }
         }
         while (true) {
             System.out.println("Для поиска введите слово");
@@ -46,9 +40,8 @@ public class Task8 {
                 break;
             } else {
                 for (File file : lst) {
-                    executors.submit(new BooksThread(result, String.valueOf(file), word));
+                    executors.submit(new BooksThread(result, file, word));
                 }
-
             }
         }
     }

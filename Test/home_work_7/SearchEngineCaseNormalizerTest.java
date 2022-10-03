@@ -1,9 +1,9 @@
 package home_work_7;
 
+import home_work_7.search.EasySearch;
+import home_work_7.search.SearchEngineCaseNormalizer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SearchEngineCaseNormalizerTest {
     private final SearchEngineCaseNormalizer secn = new SearchEngineCaseNormalizer(new EasySearch());

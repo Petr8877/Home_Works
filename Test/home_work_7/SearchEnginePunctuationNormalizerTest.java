@@ -1,5 +1,7 @@
 package home_work_7;
 
+import home_work_7.search.EasySearch;
+import home_work_7.search.SearchEnginePunctuationNormalizer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

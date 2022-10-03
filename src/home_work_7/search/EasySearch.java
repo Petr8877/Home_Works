@@ -1,4 +1,6 @@
-package home_work_7;
+package home_work_7.search;
+
+import home_work_7.api.ISearchEngine;
 
 public class EasySearch implements ISearchEngine {
 
@@ -41,6 +43,4 @@ public class EasySearch implements ISearchEngine {
         char charBeforeBeforeWord = text.charAt(indexOf - 2);
         return !(charBeforeWord >= 1040 && charBeforeWord <= 1103) && !(charBeforeWord >= 48 && charBeforeWord <= 57) && (charBeforeWord != 45 || (!(charBeforeBeforeWord >= 1040 && charBeforeBeforeWord <= 1103) && !(charBeforeBeforeWord >= 48 && charBeforeBeforeWord <= 57)));
     }
-
-
 }

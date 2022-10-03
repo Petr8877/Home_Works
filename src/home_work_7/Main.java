@@ -1,5 +1,9 @@
 package home_work_7;
 
+import home_work_7.Util.Util;
+import home_work_7.search.EasySearch;
+import home_work_7.search.IgnoreCaseDecorator;
+
 public class Main {
 
     public static void main(String[] args) {

@@ -1,5 +1,6 @@
 package home_work_7;
 
+import home_work_7.search.EasySearch;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
