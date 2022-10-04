@@ -10,17 +10,22 @@ class SearchEngineCaseNormalizerTest {
 
     @Test
     public void searchCaseNormalizer1() {
-        Assertions.assertEquals(8, secn.searchCaseNormalizer("дядя, дяди, дяди, дяди, дяде, дядю, дядей, дяде", "дядя", 1));
+        Assertions.assertEquals(8, secn.searchCaseNormalizer("дядя, дяди, дяди, дяди, дяде, дядю, дядей, дяде", "дядя"));
     }
 
     @Test
     public void searchCaseNormalizer2() {
-        Assertions.assertEquals(7, secn.searchCaseNormalizer("речь, речи, речи, речь, речью, речи, речи, вода", "речь", 3));
+        Assertions.assertEquals(7, secn.searchCaseNormalizer("речь, речи, речи, речь, речью, речи, речи, вода", "речь"));
     }
 
     @Test
     public void searchCaseNormalizer3() {
-        Assertions.assertEquals(7, secn.searchCaseNormalizer("город, города, городу, город, городом, городе, городе, вода", "город", 2));
+        Assertions.assertEquals(7, secn.searchCaseNormalizer("город, города, городу, город, городом, городе, городе, вода", "город"));
+    }
+
+    @Test
+    public void searchCaseNormalizer4() {
+        Assertions.assertEquals(13, secn.searchCaseNormalizer("конь, коня, коню, коня, конём, коне, коне, кони, коней, коням, коней, конями, конях, вода", "конь"));
     }
 
     @Test
